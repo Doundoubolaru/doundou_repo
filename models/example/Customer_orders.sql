@@ -10,7 +10,6 @@ customer_order as (
 select a.id as customer_key, o_orderkey,o_orderstatus,o_orderdate,o_orderpriority, sum(o_totalprice) total_price
 from customer_tab a
 left outer join orders b on a.ID=b.o_custkey
-where a.id=47423
 group by all
 )
 
