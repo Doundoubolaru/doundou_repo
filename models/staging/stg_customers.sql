@@ -5,7 +5,7 @@ with source as (
 renamed as (
     select
         id          as customer_id,
-        first_name  as prenom,
+        'Doundou'  as prenom,
         last_name   as nom,
         lower(email) as email,
         created_at  as date_creation
