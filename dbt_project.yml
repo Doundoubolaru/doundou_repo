@@ -1,0 +1,25 @@
+name: jaffle_shop
+
+profile: jaffle_shop
+
+seed-paths: ["seeds"]
+model-paths: ["models"]
+macro-paths: ["macros"]
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  jaffle_shop:
+   staging:
+    +materialized: view
+   marts:
+      +materialized: table
+
+seeds:
+  jaffle_shop:
+    statuts_commande:
+      +column_types:
+        statut: varchar
+        libelle: varchar
+        est_paye: boolean
