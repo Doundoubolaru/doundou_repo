@@ -6,8 +6,9 @@ with clients as (
 
 commandes as (
     select * from {{ ref('stg_orders') }}
+    where statut='completed'
 )
-
+--demo comment
 select
     c.customer_id,
     c.prenom,
