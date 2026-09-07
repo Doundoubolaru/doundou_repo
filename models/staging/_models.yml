@@ -40,3 +40,26 @@ models:
               arguments:
                 to: ref('statuts_commande')
                 field: statut
+      - name: montant
+        data_tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+
+  - name: mart_clients_commandes
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: customer_id
+        data_type: number
+      - name: prenom
+        data_type: varchar
+      - name: nb_commandes
+        data_type: number
+      - name: total_depense
+        data_type: number
+      - name: nom
+        data_type: varchar
+      - name: panier_moyen
+        data_type: number
